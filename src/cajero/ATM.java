@@ -10,27 +10,33 @@ public class ATM {
 
 	
 	public boolean autenticar(int nroCuenta, int NIP) {
-		return true;
+		return banco.validarCuenta(nroCuenta, NIP);
 	}
 	
 	public Double consultarSaldo() {
-		return 0.00;
+		return cuentaOperacion.verSaldo();
 	}
 	
 	public Double depositar(double deposito) {
-		return 0.00;
+		return cuentaOperacion.depositarFondo(deposito);
 	}
 	
 	public Double retirar(double retiro) {
-		return 0.00;
+		
+		if(dispensador.haySaldoDisponible(retiro)) {
+			return cuentaOperacion.retirarEfectivo(retiro);			
+		}else {
+			//llamar a pantalla para mostrar que el ABM no tiene
+			//saldo suficiente para el retiro que quiere hacer.
+		}
 	}
 	
 	public void cerrarSesion() {
-		
+		cuentaOperacion = null;
 	}
 	
 	public boolean sesionActiva() {
-		return true;
+		return cuentaOperacion == null;
 	}
 }
 
