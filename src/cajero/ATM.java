@@ -4,13 +4,21 @@ import producto.Cuenta;
 import sucursal.Banco;
 
 public class ATM {
+	
 	private Banco banco;
 	private Dispensador dispensador;
 	private Cuenta cuentaOperacion;
 
 	
 	public boolean autenticar(int nroCuenta, int NIP) {
-		return banco.validarCuenta(nroCuenta, NIP);
+		// llena cuentaOperacion con lo que recibe de validarCuenta
+		cuentaOperacion = banco.validarCuenta(nroCuenta, NIP);
+		if(cuentaOperacion == null) {
+			return false;
+		}else {
+			return true;
+		}
+		
 	}
 	
 	public Double consultarSaldo() {
@@ -26,7 +34,7 @@ public class ATM {
 		if(dispensador.haySaldoDisponible(retiro)) {
 			return cuentaOperacion.retirarEfectivo(retiro);			
 		}else {
-			//llamar a pantalla para mostrar que el ABM no tiene
+			//llamar a pantalla para mostrar que el ATM no tiene
 			//saldo suficiente para el retiro que quiere hacer.
 		}
 	}
@@ -36,7 +44,7 @@ public class ATM {
 	}
 	
 	public boolean sesionActiva() {
-		return cuentaOperacion == null;
+		return cuentaOperacion == null; //Revisar si hace lo que creo que hace.
 	}
 }
 
