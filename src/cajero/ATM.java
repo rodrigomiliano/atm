@@ -8,8 +8,22 @@ public class ATM {
 	private Banco banco;
 	private Dispensador dispensador;
 	private Cuenta cuentaOperacion;
-
 	
+	public ATM() {
+		
+	}
+	
+	public ATM(Banco banco) {
+		super();
+		this.banco = banco;
+		this.dispensador = new Dispensador();
+	}
+	
+	public Double mostrarSaldo() {
+		return this.dispensador.getMontoDispenser();
+	}
+
+	/*
 	public boolean autenticar(int nroCuenta, int NIP) {
 		// llena cuentaOperacion con lo que recibe de validarCuenta
 		cuentaOperacion = banco.validarCuenta(nroCuenta, NIP);
@@ -20,11 +34,11 @@ public class ATM {
 		}
 		
 	}
-	
+	*/
 	public Double consultarSaldo() {
 		return cuentaOperacion.verSaldo();
 	}
-	
+	/*
 	public Double depositar(double deposito) {
 		return cuentaOperacion.depositarFondo(deposito);
 	}
@@ -38,7 +52,7 @@ public class ATM {
 			//saldo suficiente para el retiro que quiere hacer.
 		}
 	}
-	
+	*/
 	public void cerrarSesion() {
 		cuentaOperacion = null;
 	}
