@@ -8,7 +8,7 @@ public class Dispensador {
 	private double saldoDispenser;
 	
 	//CONSTRUCTOR
-	public Dispensador(double montoDispenser) {
+	public Dispensador() {
 		this.saldoDispenser = billetesIniciales * montoBilletes ;
 	}
 
