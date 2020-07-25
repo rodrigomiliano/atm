@@ -1,18 +1,23 @@
 package sucursal;
 
+import java.util.Arrays;
+
 import producto.Cuenta;
+
 
 public class Banco {
 
 	//ATRIBUTOS
 	private String nombre;
 	private Cuenta[] cuentas;
+	private int cantidadCuentas; // (agregado 24/7)
 	
 	//CONSTRUCTOR
 	public Banco(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.cuentas = new Cuenta[10];
+		cuentas = new Cuenta[10];
+		this.cantidadCuentas = 0; // (agregado 24/7)
 	}
 
 	
@@ -32,7 +37,56 @@ public class Banco {
 	public void setCuentas(Cuenta[] cuentas) {
 		this.cuentas = cuentas;
 	}
+		
+	
+	public int getCantidadCuentas() { // (agregado 24/7)
+		return cantidadCuentas;
+	}
+
+
+	public void setCantidadCuentas(int cantidadCuentas) { // (agregado 24/7)
+		this.cantidadCuentas = cantidadCuentas;
+	}
+
+
+	//METODO PARA AGREGAR CUENTAS (agregado 24/7)
+	public void agregarCuenta(Cuenta cuenta) {
+        int i = cantidadCuentas++;
+        this.cuentas[i] = cuenta;
+    }
+
+
+	@Override
+	public String toString() {
+		return "Banco [nombre=" + nombre + ", cuentas=" + Arrays.toString(cuentas) + ", cantidadCuentas="
+				+ cantidadCuentas + "]";
+	}
+	
+	
+	
+	
 	/*
+	public void ingresarVehiculo(Vehiculo vehiculo) {
+	    if (!estaLleno()){
+			for (int i = 0; i < capacidadMaxima; i++){
+		    	if (vehiculos[i] == null){
+		    	    capacidadOcupada = capacidadOcupada + 1;
+		    		vehiculos[i] = vehiculo;
+		    		System.out.println("Ingresa un vehiculo al garaje en la posición: " + i + ", vehiculo: " + vehiculos[i]);
+		    		break; 
+		    	}
+		    }
+	    } else {
+	    	System.out.println("Garage lleno, el vehiculo no puede ingresar");
+	    }	    
+	}
+	*/
+	
+	
+	
+	
+	
+	
 	//METODO PARA ??
 		public Cuenta validarCuenta(Integer numeroCuenta, Integer nip) {
 			//System.out.println("Parametro: " + numeroCuenta + " - " + nip);
@@ -53,7 +107,9 @@ public class Banco {
 			}
 			return cuentaObtenida;
 		}
-	*/
+	
+	
+	
 	
 	
 	

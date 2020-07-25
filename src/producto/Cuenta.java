@@ -8,7 +8,7 @@ public class Cuenta {
 	/********** Variables **********/
 	
 	// ¿Por qué uso clases y no el dato primitivo? int - Integer / double - Double
-	private int cuenta;
+	private int numeroCuenta;
 	private int nip;
 	private Double saldo;
 	private Usuario usuario;
@@ -24,20 +24,24 @@ public class Cuenta {
 		
 	// Constructor:
 	public Cuenta(int cuenta, int nip, double saldo, Usuario usuario){
-		this.cuenta = cuenta;
+		this.numeroCuenta = cuenta;
 		this.nip = nip;
 		this.saldo = saldo;
 		this.usuario = usuario;
 	}
 	
+	public Cuenta(Integer numeroCuenta2, Integer nip2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	/*********** Métodos **********/
 	
 	public int getCuenta() {
-		return cuenta;
+		return numeroCuenta;
 	}
 
 	public void setCuenta(int cuenta) {
-		this.cuenta = cuenta;
+		this.numeroCuenta = cuenta;
 	}
 
 	public int getNip() {
@@ -93,7 +97,7 @@ public class Cuenta {
 	// Sobrescritura del método toString:
 	@Override
 	public String toString() {
-		return "Cuenta #" + cuenta + "\nNIP: " + nip + "\nSaldo: " + saldo + "\nUsuario: " + usuario
+		return "Cuenta #" + numeroCuenta + "\nNIP: " + nip + "\nSaldo: " + saldo + "\nUsuario: " + usuario
 				+ "]";
 	}
 	
