@@ -8,18 +8,18 @@ public class Banco {
 
 	//ATRIBUTOS
 	private String nombre;
-	private Cuenta[] cuentas;
+	public Cuenta[] cuentas;
 	private int cantidadCuentas; // (agregado 24/7)
 	private int cantidadMaxima; // (agregado 24/7)
 		
 	
 	//CONSTRUCTOR
-	public Banco(String nombre, int cantidadMaxima) {
+	public Banco(String nombre) {
 		super();
-		this.nombre = nombre;
-		cuentas = new Cuenta [cantidadMaxima];
+		this.nombre = nombre;		
 		this.cantidadCuentas = 0 ; // (agregado 24/7)
-		this.cantidadMaxima = cantidadMaxima; // (agregado 24/7)
+		this.cantidadMaxima = 10; // (agregado 24/7)
+		cuentas = new Cuenta [cantidadMaxima];
 	}
 	
 
@@ -73,7 +73,7 @@ public class Banco {
     //METODO PARA AGREGAR CUENTAS (agregado 24/7)
 	public void agregarCuenta(Cuenta cuenta) {
 		if (!limiteCuentas()) {
-			for (int i = 0; i < cantidadMaxima; i++) {
+			for (int i = 0; i < cuentas.length; i++) {
 				if (cuentas[i] == null) {
 					cantidadCuentas++;
 					cuentas[i] = cuenta;

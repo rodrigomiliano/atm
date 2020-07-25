@@ -57,7 +57,7 @@ public class Cuenta {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
+	private void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 
@@ -71,12 +71,13 @@ public class Cuenta {
 	
 	// Depositar dinero:
 	public Double depositarDinero(Double deposito){
-		if (deposito > 0){
+		//if (deposito > 0){
 			setSaldo(saldo + deposito);
-		}else{
-			return;
+			return verSaldo();
+		//}else{
+			//return;
 			// devolver ERROR.
-		}
+		//}
 	}
 	
 	// Verificar saldo:
