@@ -36,11 +36,11 @@ public class Cuenta {
 
 	/*********** Métodos **********/
 	
-	public int getCuenta() {
+	public int getNumeroCuenta() {
 		return numeroCuenta;
 	}
 
-	public void setCuenta(int cuenta) {
+	public void setNumeroCuenta(int cuenta) {
 		this.numeroCuenta = cuenta;
 	}
 
@@ -97,8 +97,7 @@ public class Cuenta {
 	// Sobrescritura del método toString:
 	@Override
 	public String toString() {
-		return "Cuenta #" + numeroCuenta + "\nNIP: " + nip + "\nSaldo: " + saldo + "\nUsuario: " + usuario
-				+ "]";
+		return "Nº Cuenta #" + numeroCuenta + "\nNIP: " + nip + "\nSaldo: " + saldo + "\nUsuario: " + usuario;
 	}
 	
 	/* Tengo que revisar bien esto para entender cómo lo implementa:

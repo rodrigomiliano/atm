@@ -9,13 +9,14 @@ public class testATM {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Banco banco = new Banco("Rio");
+		/*
+		Banco banco = new Banco("Rio",2);
 		System.out.println(banco.getNombre());
 		
 		ATM atm = new ATM(banco);
 		System.out.println("El saldo es: ");
 		System.out.println(atm.mostrarSaldo());
-		
+		*/
 		//banco.agregarCuenta(null);
 		
 		
@@ -25,13 +26,15 @@ public class testATM {
 		garaje.ingresarVehiculo(renault);
 		System.out.println("Detalle actualizado del garaje: \n" + garaje.toString());*/
 		System.out.println("");
-		Banco banco2 = new Banco("ASD");
+		Banco banco2 = new Banco("Santander", 5);
 		Usuario mGonzalez = new Usuario("Mariano", "Gonzalez");
-		Cuenta cuenta001 = new Cuenta(11111, 11111, 8000, mGonzalez);		
+		Cuenta cuenta11111 = new Cuenta(11111, 11111, 8000, mGonzalez);
+		banco2.agregarCuenta(cuenta11111);
 		//System.out.println("Cuentas: " + banco.toString());
 		
-		System.out.println(banco);
-		
+		System.out.println(banco2.getCantidadCuentas());
+		System.out.println("");
+		System.out.println(banco2.toString());
 			
 	
 		
