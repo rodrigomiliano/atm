@@ -98,7 +98,7 @@ public class Cuenta {
 	// Sobrescritura del método toString:
 	@Override
 	public String toString() {
-		return "Nº Cuenta #" + numeroCuenta + "\nNIP: " + nip + "\nSaldo: " + saldo + "\nUsuario: " + usuario;
+		return "Nº Cuenta #" + numeroCuenta + ", NIP: " + nip + ", Saldo: " + saldo + ", Usuario: " + usuario + "\n";
 	}
 	
 	/* Tengo que revisar bien esto para entender cómo lo implementa:

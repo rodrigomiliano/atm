@@ -9,17 +9,17 @@ public class Banco {
 	//ATRIBUTOS
 	private String nombre;
 	public Cuenta[] cuentas;
-	private int cantidadCuentas; // (agregado 24/7)
-	private int cantidadMaxima; // (agregado 24/7)
+	private int cantidadCuentas; 
+	private int cantidadMaxima; 
 		
 	
 	//CONSTRUCTOR
 	public Banco(String nombre) {
 		super();
 		this.nombre = nombre;		
-		this.cantidadCuentas = 0 ; // (agregado 24/7)
-		this.cantidadMaxima = 10; // (agregado 24/7)
-		cuentas = new Cuenta [cantidadMaxima];
+		this.cantidadCuentas = 0 ; 
+		this.cantidadMaxima = 10; 
+		this.cuentas = new Cuenta [cantidadMaxima];
 	}
 	
 
@@ -61,16 +61,10 @@ public class Banco {
 	public void setCantidadMaxima(int cantidadMaxima) {
 		this.cantidadMaxima = cantidadMaxima;
 	}
-
+		
 	
-	
-	//METODO PARA AGREGAR CUENTAS (agregado 24/7)
-	/*public void agregarCuenta(Cuenta cuenta) {
-        int i = cantidadCuentas++;
-        this.cuentas[i] = cuenta;
-    }*/
 
-    //METODO PARA AGREGAR CUENTAS (agregado 24/7)
+    //METODO PARA AGREGAR CUENTAS 
 	public void agregarCuenta(Cuenta cuenta) {
 		if (!limiteCuentas()) {
 			for (int i = 0; i < cuentas.length; i++) {
@@ -91,12 +85,12 @@ public class Banco {
     	return (cantidadMaxima==cantidadCuentas);
     }
 
+	
 
 	// TO STRING
 	@Override
 	public String toString() {
-		return "Banco: " + nombre + ". Cuentas: \n" + Arrays.toString(cuentas) + ", cantidadCuentas="
-				+ cantidadCuentas + ", cantidadMaxima=" + cantidadMaxima + "]";
+		return "Banco: " + nombre +	", cantidad de Cuentas: " + cantidadCuentas + ", cantidad Maxima: " + cantidadMaxima + ", Cuentas: \n" + Arrays.toString(cuentas);
 	}
 	
 	
