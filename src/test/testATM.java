@@ -39,7 +39,8 @@ public class testATM {
 		//System.out.println(pepe.length);
 		
 		
-			
+		ATM cajero01 = new ATM();
+        cajero01.menu();
 	
 		
 		
