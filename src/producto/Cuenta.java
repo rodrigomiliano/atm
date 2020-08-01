@@ -8,7 +8,7 @@ public class Cuenta {
 	/********** Variables **********/
 	
 	// ¿Por qué uso clases y no el dato primitivo? int - Integer / double - Double
-	private int cuenta;
+	private int numeroCuenta;
 	private int nip;
 	private Double saldo;
 	private Usuario usuario;
@@ -24,20 +24,24 @@ public class Cuenta {
 		
 	// Constructor:
 	public Cuenta(int cuenta, int nip, double saldo, Usuario usuario){
-		this.cuenta = cuenta;
+		this.numeroCuenta = cuenta;
 		this.nip = nip;
 		this.saldo = saldo;
 		this.usuario = usuario;
 	}
 	
-	/*********** Métodos **********/
-	
-	public int getCuenta() {
-		return cuenta;
+	public Cuenta(Integer numeroCuenta2, Integer nip2) {
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setCuenta(int cuenta) {
-		this.cuenta = cuenta;
+	/*********** Métodos **********/
+	
+	public int getNumeroCuenta() {
+		return numeroCuenta;
+	}
+
+	public void setNumeroCuenta(int cuenta) {
+		this.numeroCuenta = cuenta;
 	}
 
 	public int getNip() {
@@ -53,7 +57,7 @@ public class Cuenta {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
+	private void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 
@@ -67,12 +71,13 @@ public class Cuenta {
 	
 	// Depositar dinero:
 	public Double depositarDinero(Double deposito){
-		if (deposito > 0){
+		//if (deposito > 0){
 			setSaldo(saldo + deposito);
-		}else{
-			return;
+			return verSaldo();
+		//}else{
+			//return;
 			// devolver ERROR.
-		}
+		//}
 	}
 	
 	// Verificar saldo:
@@ -93,8 +98,7 @@ public class Cuenta {
 	// Sobrescritura del método toString:
 	@Override
 	public String toString() {
-		return "Cuenta #" + cuenta + "\nNIP: " + nip + "\nSaldo: " + saldo + "\nUsuario: " + usuario
-				+ "]";
+		return "Nº Cuenta #" + numeroCuenta + ", NIP: " + nip + ", Saldo: " + saldo + ", Usuario: " + usuario + "\n";
 	}
 	
 	/* Tengo que revisar bien esto para entender cómo lo implementa:
