@@ -11,7 +11,7 @@ public class Menu {
 	final static int SALIR = 4;
 	static Scanner scanner = new Scanner(System.in);
 	
-	public void inicio(ATM cajero) {
+	public static void inicio(ATM cajero) {
 		boolean continuar = true;
 		String ingreso = "y";
 		

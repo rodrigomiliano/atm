@@ -15,9 +15,7 @@ public class testATM {
 
 		ATM cajero = new ATM(banco);
 		
-		Menu menu = new Menu();
-		
-		menu.inicio(cajero);
+		Menu.inicio(cajero);
 		
 	}
 
