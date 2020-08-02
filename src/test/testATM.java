@@ -18,8 +18,6 @@ public class testATM {
 		Menu menu = new Menu();
 		
 		menu.inicio(cajero);
-
-
 		
 	}
 
