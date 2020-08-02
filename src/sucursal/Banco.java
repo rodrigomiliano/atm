@@ -1,29 +1,23 @@
 package sucursal;
 
-import java.util.Arrays;
-
+import java.util.ArrayList;
+import java.util.List;
 import producto.Cuenta;
 
 public class Banco {
-
-	//ATRIBUTOS
-	private String nombre;
-	public Cuenta[] cuentas;
-	private int cantidadCuentas; 
-	private int cantidadMaxima; 
-		
 	
-	//CONSTRUCTOR
-	public Banco(String nombre) {
-		super();
+	// VARIABLES
+	private String nombre;
+	public List<Cuenta> cuentas;
+	
+	
+	// CONSTRUCTOR
+	public Banco(String nombre) {		
 		this.nombre = nombre;		
-		this.cantidadCuentas = 0 ; 
-		this.cantidadMaxima = 10; 
-		this.cuentas = new Cuenta [cantidadMaxima];
+		this.cuentas = new ArrayList();
 	}
 	
-
-	//GETTERS Y SETTERS
+	// GETTERS Y SETTERS
 	public String getNombre() {
 		return nombre;
 	}
@@ -33,92 +27,49 @@ public class Banco {
 	}
  
 	
-
-	public Cuenta[] getCuentas() {
+	public List<Cuenta> getCuentas() {
 		return cuentas;
 	}
 
-	public void setCuentas(Cuenta[] cuentas) {
+	public void setCuentas(List<Cuenta> cuentas) {
 		this.cuentas = cuentas;
 	}
-
 	
-
-	public int getCantidadCuentas() {
-		return cantidadCuentas;
-	}
-
-	public void setCantidadCuentas(int cantidadCuentas) {
-		this.cantidadCuentas = cantidadCuentas;
-	}
-
-	
-
-	public int getCantidadMaxima() {
-		return cantidadMaxima;
-	}
-
-	public void setCantidadMaxima(int cantidadMaxima) {
-		this.cantidadMaxima = cantidadMaxima;
-	}
 		
-	
 
-    //METODO PARA AGREGAR CUENTAS 
+	// METODO PARA AGREGAR CUENTAS AL LISTADO
 	public void agregarCuenta(Cuenta cuenta) {
-		if (!limiteCuentas()) {
-			for (int i = 0; i < cuentas.length; i++) {
-				if (cuentas[i] == null) {
-					cantidadCuentas++;
-					cuentas[i] = cuenta;
-					System.out.println("Se agrega una nueva cuenta al banco en posicion: " + i + "\nDetalle cuenta: \n" + cuentas[i]);
-					break;
-				}
-			}
-		} else {
-			System.out.println("Se ha llegado al lìmite de cuentas permitidas en el Banco");
-		}
+		cuentas.add(cuenta);
 	}
+	
 			
-	// BOOLEANO PARA RETORNAR LIMITE DE CUENTAS
-	public boolean limiteCuentas() {
-    	return (cantidadMaxima==cantidadCuentas);
-    }
-
-	
-
-	// TO STRING
-	@Override
-	public String toString() {
-		return "Banco: " + nombre +	", cantidad de Cuentas: " + cantidadCuentas + ", cantidad Maxima: " + cantidadMaxima + ", Cuentas: \n" + Arrays.toString(cuentas);
-	}
-	
-	
-	
-	
-	
-	
-	//METODO PARA ??
-	/*	public Cuenta validarCuenta(Integer numeroCuenta, Integer nip) {
-			//System.out.println("Parametro: " + numeroCuenta + " - " + nip);
+	//METODO PARA VALIDAR CUENTA AL INGRESAR CUENTA Y NIP
+		public Cuenta validarCuenta(Integer numeroCuenta, Integer nip) {
+			//System.out.println("Parametro: " + numeroCuenta + " - " + nip); //para ver Cuenta y NIP ingresado
 			Cuenta cuentaObtenida = null;
 			Cuenta cuentaBuscada  = new Cuenta(numeroCuenta, nip);
-			//System.out.println("Cuenta Buscada: " + cuentaBuscada.toString());
+			//System.out.println("Cuenta Buscada: " + cuentaBuscada.getNumeroCuenta() + "; NIP buscado: " + cuentaBuscada.getNip());//para ver Cuenta y NIP ingresado
 			for (Cuenta cuenta : cuentas) {
-				//System.out.println("--Cuenta: " + cuenta.getNumeroCuenta() + " - " + cuenta.getNIP());
-				//System.out.println("Iguales: " + cuenta.equals(cuentaBuscada));
+				//System.out.println("Cuenta: " + cuenta.getNumeroCuenta() + " NIP: " + cuenta.getNip());//para ver Cuenta y NIP ingresado
+				//System.out.println("¿Pertenecen a un cliente esa cuenta y NIp? " + cuenta.equals(cuentaBuscada));
 				if (cuenta.equals(cuentaBuscada)) {
 					cuentaObtenida = cuenta;
 					break;
 				}
 			}
 			// En caso que no se encuentre me avisa
-			if (cuentaObtenida == null) {
-				System.out.println("Cuenta no encontrada");
-			}
+			//if (cuentaObtenida == null) {
+			//	System.out.println("Cuenta no encontrada");
+			//}
 			return cuentaObtenida;
 		}
-		*/
+
+
+		@Override
+		public String toString() {
+			return "Banco [nombre=" + nombre + ", cuentas=" + cuentas + "]";
+		}
+		
 	
 	
 	
