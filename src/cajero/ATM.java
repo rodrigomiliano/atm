@@ -6,20 +6,28 @@ import sucursal.Banco;
 public class ATM {
 	
     // VARIABLES
+	private static ATM instance = null;
 	private Banco banco;
 	private Dispensador dispensador;
 	private Cuenta cuentaOperacion;
 	
 	// CONSTRUCTOR POR DEFECTO
-	public ATM() {		
+	private ATM() {		
 	}
 	
 	// CONSTRUCTOR
-	public ATM(Banco banco) {
+	private ATM(Banco banco) {
 		super();
 		this.banco = banco;
-		this.dispensador = new Dispensador();
+		this.dispensador = Dispensador.getInstance();
 		mostrarSaldoDispensador();
+	}
+	
+	public static ATM getInstance(Banco banco) {
+		if(instance == null) {
+			instance = new ATM(banco);
+		}
+		return instance;
 	}
 	
 	// GETTER Y SETTER DE BANCO 		

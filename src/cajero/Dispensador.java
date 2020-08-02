@@ -3,13 +3,20 @@ package cajero;
 public class Dispensador {
 
 	// VARIABLES
+	private static Dispensador instance = null;
 	public static final Integer BILLETES_INICIALES = 500; 
 	public static final Double MONTO_BILLETES = 20.0; 
 	private double saldoDispenser;
 	
 	// CONSTRUCTOR
-	public Dispensador() {
+	private Dispensador() {
 		this.saldoDispenser = BILLETES_INICIALES * MONTO_BILLETES ;
+	}
+	
+	public static Dispensador getInstance() {
+		if (instance == null)
+			instance = new Dispensador();
+		return instance;
 	}
 
 	// GETTER Y SETTER DE SALDODISPENSER
