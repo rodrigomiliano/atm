@@ -21,7 +21,6 @@ public class testATM {
 
 		ATM cajero = new ATM(banco);
 		
-
 		inicio(cajero);
 
 		System.out.println("Fin");
@@ -36,17 +35,15 @@ public class testATM {
 
 			int nroCuenta = getInt("Ingrese el numero de cuenta: ");
 			int nip = getInt("Ingrese el NIP: ");
-
 			boolean autenticado = cajero.autenticar(nroCuenta, nip);
-			//System.out.println("Autenticado: " + autenticado); //Verifica si exista una cuenta y nip segun lo ingresado
-			if (autenticado) {
-				//System.out.println("Puedo operar con el cajero");
+			
+			if (autenticado) {				
 				cajero.getDatosCuenta();
 				menuOpeaciones(cajero);
 			} else {
 				System.out.println("Cuenta y NIP incorrecto");
 			}
-			System.out.print("¿Desea continar? ingrese true/false"); // ver si se puede armar un mensaje de error ingrese opcion si/no
+			System.out.print("¿Desea continar? ingrese true/false");
 			continuar = scanner.nextBoolean(); 
 			System.out.println();
 		}
@@ -125,7 +122,7 @@ public class testATM {
 		return valor;
 	}
 
-	private static double getDouble(String mensaje) {//para evitar ingreso de letras al depositar o retirar
+	private static double getDouble(String mensaje) {// Para evitar ingreso de letras al depositar o retirar
 		double valor = -1D;
 		while (valor < 0) {
 			try {
@@ -140,4 +137,3 @@ public class testATM {
 		return valor;
 	}
 }
-

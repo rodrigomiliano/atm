@@ -1,6 +1,5 @@
 package producto;
 
-// Importo la clase Usuario del paquete cliente.
 import cliente.Usuario;
 
 public class Cuenta {
@@ -30,8 +29,7 @@ public class Cuenta {
 		this.usuario = usuario;
 	}	
 	
-	//GETTERS Y SETTERS
-	
+	// GETTER Y SETTER DE NUMEROCUENTA
 	public Integer getNumeroCuenta() {
 		return numeroCuenta;
 	}
@@ -41,6 +39,7 @@ public class Cuenta {
 	}
 
 	
+	// GETTER Y SETTER DE NIP
 	public int getNip() {
 		return nip;
 	}
@@ -49,7 +48,7 @@ public class Cuenta {
 		this.nip = nip;
 	}
 
-	
+	// GETTER Y SETTER DE SALDO
 	public Double getSaldo() {
 		return saldo;
 	}
@@ -58,6 +57,8 @@ public class Cuenta {
 		this.saldo = saldo;
 	}
 
+	
+	// GETTER Y SETTER DE USUARIO
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -67,7 +68,7 @@ public class Cuenta {
 	}
 		
 	
-	// TOSTRING
+	// TO STRING
 	@Override
 	public String toString() {
 		return "Nº Cuenta #" + numeroCuenta + ", NIP: " + nip + ", Saldo: " + saldo + ", Usuario: " + usuario + "\n";
@@ -77,7 +78,7 @@ public class Cuenta {
 	// HASHCODE  
 	@Override
 	public int hashCode() {
-		final int prime = 31; //ver porque da 31
+		final int prime = 31; 
 		int result = 1;
 		result = prime * result + ((nip == null) ? 0 : nip.hashCode());
 		result = prime * result + ((numeroCuenta == null) ? 0 : numeroCuenta.hashCode());
@@ -107,20 +108,21 @@ public class Cuenta {
 		return true;
 	}
 	  
+	
 	// METODO CONSULTAR SALDO CUENTA
 	public Double consultarSaldo() {
 		return saldo;
 	}
 	
 	
-	// Depositar dinero:
+	// DEPOSITAR DINERO
 	public Double depositarDinero(Double deposito){		
 			setSaldo(saldo + deposito);
 			return saldo;		
 	}
 				
 		
-	// Retirar dinero:
+	// RETIRAR DINERO
 	public Double retirarDinero(Double monto){
 		if (tieneSaldo(monto)){
 			setSaldo(saldo - monto);
@@ -131,11 +133,9 @@ public class Cuenta {
 	}
 	
 	 
-	// Verificar saldo:
+	// VERIFICAR SALDO
 	public boolean tieneSaldo(Double monto){
 		return saldo >= monto;
-	}
-		
+	}	
 		
 }
-

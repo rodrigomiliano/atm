@@ -18,8 +18,7 @@ public class Usuario {
 		this.apellido = apellido;
 	}
 
-	// GETTERS Y SETTERS
-	
+	// GETTER Y SETTER DE NOMBRE	
 	public String getNombre() {
 		return nombre;
 	}
@@ -28,6 +27,8 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
+	
+	// GETTER Y SETTER DE APELLIDO
 	public String getApellido() {
 		return apellido;
 	}
@@ -36,11 +37,12 @@ public class Usuario {
 		this.apellido = apellido;
 	}
 
+	// GET NOMBRE COMPLETO
 	public String getNombreCompleto() {
 		return nombre + " " + apellido;
 	}
 	
-	// TOSTRING
+	// TO STRING
 	@Override
 	public String toString() {
 		return "Cliente: " + nombre + " " + apellido;

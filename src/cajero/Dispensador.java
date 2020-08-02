@@ -3,8 +3,8 @@ package cajero;
 public class Dispensador {
 
 	// VARIABLES
-	public final int billetesIniciales = 500; // esta la posibilidad de usarlo con static, habria que ver si funciona asi o no
-	public final double montoBilletes = 20; // esta la posibilidad de usarlo con static, habria que ver si funciona asi o no
+	public final int billetesIniciales = 500; 
+	public final double montoBilletes = 20; 
 	private double saldoDispenser;
 	
 	// CONSTRUCTOR
@@ -12,19 +12,21 @@ public class Dispensador {
 		this.saldoDispenser = billetesIniciales * montoBilletes ;
 	}
 
-	//GETTERS Y SETTERS
-	public double getMontoDispenser() {
+	// GETTER Y SETTER DE SALDODISPENSER
+	public double getSaldoDispenser() {
 		return saldoDispenser;
 	}
 
-	public void setMontoDispenser(double montoDispenser) {
-		this.saldoDispenser = montoDispenser;
+	public void setSaldoDispenser(double saldoDispenser) {
+		this.saldoDispenser = saldoDispenser;
 	}
 
+	// GETTER DE BILLETESINICIALES
 	public int getBilletesIniciales() {
 		return billetesIniciales;
 	}
 
+	// GETTER DE  MONTOBILLETES
 	public double getMontoBilletes() {
 		return montoBilletes;
 	}
@@ -45,10 +47,6 @@ public class Dispensador {
 	public String toString() {
 		return "Dispensador [billetesIniciales=" + billetesIniciales + ", montoBilletes=" + montoBilletes
 				+ ", saldoDispenser=" + saldoDispenser + "]";
-	}
-	
-	
-	
-	
+	}	
 	
 }

@@ -9,10 +9,12 @@ public class ATM {
 	private Banco banco;
 	private Dispensador dispensador;
 	private Cuenta cuentaOperacion;
-		
+	
+	// CONSTRUCTOR POR DEFECTO
 	public ATM() {		
 	}
 	
+	// CONSTRUCTOR
 	public ATM(Banco banco) {
 		super();
 		this.banco = banco;
@@ -20,8 +22,7 @@ public class ATM {
 		mostrarSaldoDispensador();
 	}
 	
-	// GETTERS Y SETTERS		
-	
+	// GETTER Y SETTER DE BANCO 		
 	public Banco getBanco() {
 		return banco;
 	}
@@ -30,6 +31,7 @@ public class ATM {
 		this.banco = banco;
 	}
 
+	// GETTER Y SETTER DE DISPENSADOR
 	public Dispensador getDispensador() {
 		return dispensador;
 	}
@@ -38,17 +40,14 @@ public class ATM {
 		this.dispensador = dispensador;
 	}
 
-	
 
 	// METODO PARA AUITENTICAR CUENTA CLIENTE
 	public boolean autenticar(Integer numeroCuenta, Integer nip) {
 		Cuenta cuentaCliente = banco.validarCuenta(numeroCuenta, nip);
 		if (cuentaCliente != null) {
-			//System.out.println("Cuenta Cliente: " + cuentaCliente.toString());
 			cuentaOperacion = cuentaCliente;
 			return true;
-		} else {
-		//	System.out.println("Cuenta Cliente: no encontrada");
+		} else {		
 			return false;
 		}
 	}
@@ -66,6 +65,7 @@ public class ATM {
 		return cuentaOperacion.depositarDinero(deposito);
 	}
 	
+	// METODO PARA RETIRAR
 	public Double retirarDinero(Double monto) {
 		Double retiro = cuentaOperacion.consultarSaldo();
 		if(dispensador.haySaldoDisponible(monto)) {
@@ -81,40 +81,16 @@ public class ATM {
 	
 	// MUESTRA SALDO DISPENSADOR
 	public Double mostrarSaldoDispensador() {
-		return this.dispensador.getMontoDispenser();
+		return this.dispensador.getSaldoDispenser();
 	}
+		
 	
-	
-	public void cerrarSesion() {//Revisar
-		cuentaOperacion = null;
-	}
-	
-	public boolean sesionActiva() {
-		return cuentaOperacion == null; //Revisar si hace lo que creo que hace.
-	}
-	
-	
+	// GET DE DATOS DE LA CUENTA AL INGRESAR
 	public void getDatosCuenta() {
 		System.out.println("Bienvenido");
 		System.out.println(" # " + cuentaOperacion.getUsuario().getNombreCompleto());
 		System.out.println(" # " + cuentaOperacion.getNumeroCuenta());
 		
-	}
-	
-		
-	
-	
-	
-	
-	
+	}	
 	
 }
-
-
-
-
-
-
-
-
-
