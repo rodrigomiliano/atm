@@ -30,13 +30,13 @@ public class testATM {
 
 	private static void inicio(ATM cajero) {
 		boolean continuar = true;
-		String ingreso = "Y";
+		String ingreso = "y";
 		
 		while (continuar == true) {
 			
 		
 		switch (ingreso) {
-		case "Y":
+		case "y":
 			int nroCuenta = getInt("Ingrese el numero de cuenta: ");
 			int nip = getInt("Ingrese el NIP: ");
 			boolean autenticado = cajero.autenticar(nroCuenta, nip);
@@ -47,8 +47,8 @@ public class testATM {
 			} else {
 				System.out.println("Cuenta y NIP incorrecto");
 			}
-			System.out.print("¿Desea continar? ingrese Y para continuar, N para salir");
-			ingreso = scanner.next();
+			System.out.print("¿Desea continar? ingrese 'y' para continuar, N para salir: ");
+			ingreso = scanner.next().toLowerCase();
 			continuar = true;
 			System.out.println();
 			
