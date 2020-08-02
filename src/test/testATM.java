@@ -8,8 +8,8 @@ import sucursal.Banco;
 public class testATM {
 
 	final static int CONSULTA_SALDO = 1;
-	final static int DEPOSITO = 2;
-	final static int RETIRO = 3;
+	final static int RETIRO = 2;
+	final static int DEPOSITO = 3;
 	final static int SALIR = 4;
 	static Scanner scanner = new Scanner(System.in);
 
@@ -23,7 +23,7 @@ public class testATM {
 		
 		inicio(cajero);
 
-		System.out.println("Fin");
+		System.out.println("Fin de sesión. Muchas gracias por operar con nosotros.");
 		scanner.close();
 
 	}
@@ -32,9 +32,9 @@ public class testATM {
 		boolean continuar = true;
 
 		while (continuar == true) {
-
+            System.out.println("BIENVENIDO");
 			int nroCuenta = getInt("Ingrese el numero de cuenta: ");
-			int nip = getInt("Ingrese el NIP: ");
+			int nip = getInt("Ingrese el NIP asociado al n° de cuenta especificado: ");
 			boolean autenticado = cajero.autenticar(nroCuenta, nip);
 			
 			if (autenticado) {				
@@ -84,8 +84,8 @@ public class testATM {
 		while (continuar == true) {
 			operacion = getInt("Ingrese la operacion: ");
 			if (operacion == CONSULTA_SALDO ||
-				operacion == DEPOSITO ||
 				operacion == RETIRO ||
+				operacion == DEPOSITO ||
 				operacion == SALIR) {
 				continuar = false;
 			} else {
@@ -101,8 +101,8 @@ public class testATM {
 		System.out.println("- Opciones de Operaciones                      -");
 		System.out.println("------------------------------------------------");
 		System.out.println(" * " + CONSULTA_SALDO + " - Consulta de Saldo");
-		System.out.println(" * " + DEPOSITO + " - Depósito");
 		System.out.println(" * " + RETIRO + " - Retiro");
+		System.out.println(" * " + DEPOSITO + " - Depósito");		
 		System.out.println(" * " + SALIR + " - Salir");
 		System.out.println("------------------------------------------------");
 	}

@@ -3,8 +3,8 @@ package cajero;
 public class Dispensador {
 
 	// VARIABLES
-	public final int billetesIniciales = 500; 
-	public final double montoBilletes = 20; 
+	public final Integer billetesIniciales = 500; 
+	public final Double montoBilletes = 20.0; 
 	private double saldoDispenser;
 	
 	// CONSTRUCTOR
