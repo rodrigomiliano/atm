@@ -13,11 +13,9 @@ public class Menu {
 	
 	public static void inicio(ATM cajero) {
 		boolean continuar = true;
-		String ingreso = "y";
 		
 		while (continuar == true) {		
-		switch (ingreso) {
-		case "y":
+		
 			System.out.println("BIENVENIDO");
 			int nroCuenta = getInt("Ingrese el numero de cuenta: ");
 			int nip = getInt("Ingrese el NIP asociado al n° de cuenta especificado: ");
@@ -29,22 +27,13 @@ public class Menu {
 			} else {
 				System.out.println("Cuenta y NIP incorrecto");
 			}
-			System.out.print("¿Desea continar? ingrese Y para continuar, N para salir: ");
-			ingreso = scanner.next().toLowerCase();
-			continuar = true;
-			System.out.println();
 			
-			break;
-
-		default:
 			continuar = false;
 			System.out.println("Fin de sesión. Muchas gracias por operar con nosotros.");
 			System.out.println("------------------------------------------------");
 			System.out.println("------------------------------------------------");
 			inicio(cajero);
 			//scanner.close();
-			break;
-		}
 
 		}
 	}
