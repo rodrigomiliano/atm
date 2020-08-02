@@ -15,11 +15,10 @@ public class Menu {
 		boolean continuar = true;
 		String ingreso = "y";
 		
-		while (continuar == true) {
-			System.out.println("BIENVENIDO");
-		
+		while (continuar == true) {		
 		switch (ingreso) {
 		case "y":
+			System.out.println("BIENVENIDO");
 			int nroCuenta = getInt("Ingrese el numero de cuenta: ");
 			int nip = getInt("Ingrese el NIP asociado al n° de cuenta especificado: ");
 			boolean autenticado = cajero.autenticar(nroCuenta, nip);
@@ -40,7 +39,10 @@ public class Menu {
 		default:
 			continuar = false;
 			System.out.println("Fin de sesión. Muchas gracias por operar con nosotros.");
-			scanner.close();
+			System.out.println("------------------------------------------------");
+			System.out.println("------------------------------------------------");
+			inicio(cajero);
+			//scanner.close();
 			break;
 		}
 
