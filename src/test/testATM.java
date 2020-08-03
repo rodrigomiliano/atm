@@ -12,13 +12,10 @@ public class testATM {
 		BancoDAO m1 = new BancoDAO();
 
 		Banco banco = m1.crearBanco("Banco Galicia");
-
-		ATM cajero = new ATM(banco);
 		
-		Menu menu = new Menu();
+		ATM cajero = ATM.getInstance(banco);	
 		
-		menu.inicio(cajero);
+		Menu.inicio(cajero);
 		
 	}
-
 }

@@ -3,13 +3,20 @@ package cajero;
 public class Dispensador {
 
 	// VARIABLES
-	public static final Integer billetesIniciales = 500; 
-	public static final Double montoBilletes = 20.0; 
+	private static Dispensador instance = null;
+	public static final Integer BILLETES_INICIALES = 500; 
+	public static final Double MONTO_BILLETES = 20.0; 
 	private double saldoDispenser;
 	
 	// CONSTRUCTOR
-	public Dispensador() {
-		this.saldoDispenser = billetesIniciales * montoBilletes ;
+	private Dispensador() {
+		this.saldoDispenser = BILLETES_INICIALES * MONTO_BILLETES ;
+	}
+	
+	public static Dispensador getInstance() {
+		if (instance == null)
+			instance = new Dispensador();
+		return instance;
 	}
 
 	// GETTER Y SETTER DE SALDODISPENSER
@@ -23,12 +30,12 @@ public class Dispensador {
 
 	// GETTER DE BILLETESINICIALES
 	public int getBilletesIniciales() {
-		return billetesIniciales;
+		return BILLETES_INICIALES;
 	}
 
 	// GETTER DE  MONTOBILLETES
 	public double getMontoBilletes() {
-		return montoBilletes;
+		return MONTO_BILLETES;
 	}
 	
 	
@@ -45,7 +52,7 @@ public class Dispensador {
 	// TO STRING
 	@Override
 	public String toString() {
-		return "Dispensador [billetesIniciales=" + billetesIniciales + ", montoBilletes=" + montoBilletes
+		return "Dispensador [billetesIniciales=" + BILLETES_INICIALES + ", montoBilletes=" + MONTO_BILLETES
 				+ ", saldoDispenser=" + saldoDispenser + "]";
 	}	
 	
