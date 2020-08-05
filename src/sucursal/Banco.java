@@ -8,7 +8,7 @@ public class Banco {
 	
 	// VARIABLES
 	private String nombre;
-	public List<Cuenta> cuentas;
+	private List<Cuenta> cuentas;
 	
 	
 	// CONSTRUCTOR

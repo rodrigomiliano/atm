@@ -5,7 +5,7 @@ import dao.BancoDAO;
 import pantalla.Menu;
 import sucursal.Banco;
 
-public class testATM {
+public class TestATM {
 
 	public static void main(String[] args) {
 

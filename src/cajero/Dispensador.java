@@ -4,8 +4,8 @@ public class Dispensador {
 
 	// VARIABLES
 	private static Dispensador instance = null;
-	public static final Integer BILLETES_INICIALES = 500; 
-	public static final Double MONTO_BILLETES = 20.0; 
+	private static final Integer BILLETES_INICIALES = 500; 
+	private static final Double MONTO_BILLETES = 20.0; 
 	private double saldoDispenser;
 	
 	// CONSTRUCTOR
